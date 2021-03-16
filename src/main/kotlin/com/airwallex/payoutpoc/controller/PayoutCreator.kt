@@ -1,5 +1,6 @@
 package com.airwallex.payoutpoc.controller
 
+import com.airwallex.payoutpoc.dto.BatchPayoutAttemptWithPayoutIntent
 import com.airwallex.payoutpoc.dto.PayoutAttempt
 import com.airwallex.payoutpoc.dto.PayoutCreated
 import com.airwallex.payoutpoc.dto.PayoutIntent
@@ -21,5 +22,8 @@ interface PayoutCreator {
     @PostMapping("option")
     fun getPayoutOption(@RequestBody payoutIntent: PayoutIntent): Optional<PayoutOption>
     @PostMapping("attempts")
-    fun createPayout(@RequestBody payoutAttempt: PayoutAttempt): PayoutCreated
+    fun createPayout(@RequestBody payoutAttempt: PayoutAttempt): PayoutAttempt
+    @PostMapping("batch-attempts")
+    fun createBatchPayout(@RequestBody batchPayoutAttemptWithPayoutIntent: BatchPayoutAttemptWithPayoutIntent): BatchPayoutAttemptWithPayoutIntent
+
 }

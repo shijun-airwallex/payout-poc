@@ -14,6 +14,6 @@ data class PayoutOptions (
 )
 
 enum class PayoutMethod(supportBankAccountType: List<String>) {
-    SLOW(listOf("ACHBankAccount")), FAST(listOf("FedWireBankAccount"));
+    USER_DEFAULT(listOf()), SLOW(listOf("ACHBankAccount")), FAST(listOf("FedWireBankAccount"));
 }
 
